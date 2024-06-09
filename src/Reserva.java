@@ -1,4 +1,4 @@
-package finales;
+
 
 import interfaces.ICliente;
 import interfaces.IHabitacion;
@@ -22,12 +22,12 @@ public class Reserva implements IReserva {
 
     @Override
     public double calcularCosto() {
-        throw new Error("metodo calcularCosto sin implementar");
+        return this.habitacion.calcularPrecioTotal(this.getFechaInicio(), this.getFechaFin());
     }
 
     @Override
     public void cancelarReserva() {
-        throw new Error("metodo cancelarReserva sin implementar");
+        System.out.println("Reserva cancelada");
         
     }
 

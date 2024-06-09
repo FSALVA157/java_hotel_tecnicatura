@@ -1,6 +1,3 @@
-import finales.GestorDisponibilidad;
-
-
 public class App {
     private static GestorDisponibilidad gestorDisp;
 

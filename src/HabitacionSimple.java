@@ -1,13 +1,13 @@
-package finales;
+
 
 import abstractas.HabitacionGeneral;
+import interfaces.IHabitacion;
 import java.time.LocalDate;
 import java.util.List;
-import javax.security.auth.login.AppConfigurationEntry;
 
     
 
-public class HabitacionSimple<ComodidadBasica> extends HabitacionGeneral{
+public class HabitacionSimple extends HabitacionGeneral<ComodidadBasica>{
     
 
     public HabitacionSimple(String tipo, double precio, List<ComodidadBasica> comodidades) {
@@ -25,7 +25,7 @@ public class HabitacionSimple<ComodidadBasica> extends HabitacionGeneral{
     }
 
     @Override
-    public List getComodidades() {
+    public List<ComodidadBasica> getComodidades() {
         return this.comodidades;
     }
 
@@ -37,8 +37,19 @@ public class HabitacionSimple<ComodidadBasica> extends HabitacionGeneral{
 
     @Override
     public double calcularPrecioTotal(LocalDate fechaInicio, LocalDate fechaFin) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioTotal'");
+        double precio_comodidades = 0;
+        for (Object comodidad : this.comodidades) {
+            ComodidadBasica comodidad_aux = (ComodidadBasica) comodidad;
+            precio_comodidades +=  comodidad_aux.getPrecio();  
+        }
+        double precio_diario = this.getPrecio() + precio_comodidades;
+        int noches = (int) (fechaFin.toEpochDay() - fechaInicio.toEpochDay());
+        return noches * precio_diario;
+        
+    }
+
+    public boolean equals(IHabitacion<ComodidadBasica> otra_Habitacion) {
+        return this.getTipo().equals(otra_Habitacion.getTipo()) && this.getPrecio() == otra_Habitacion.getPrecio();
     }
 
 }

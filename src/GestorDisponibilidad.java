@@ -1,4 +1,4 @@
-package finales;
+
 
 import abstractas.Comodidad;
 import abstractas.HabitacionGeneral;

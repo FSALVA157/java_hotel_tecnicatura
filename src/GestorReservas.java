@@ -1,4 +1,4 @@
-package finales;
+
 
 import interfaces.ICliente;
 import interfaces.IHabitacion;
@@ -28,6 +28,8 @@ public class GestorReservas {
         for (IReserva reserva : reservas) {
             if(reserva.equals(reserva_cancelada)){
                 this.reservas.remove(reserva);
+                reserva.cancelarReserva();
+                break;
             }
         }
     }
@@ -42,7 +44,7 @@ public class GestorReservas {
 
 
     public double calcCostoReserva(Reserva reserva){
-        throw new Error("metodo calcCostoReserva sin implementar");
+        return reserva.calcularCosto();
     };
 
 }

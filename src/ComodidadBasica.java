@@ -1,4 +1,4 @@
-package finales;
+
 
 import abstractas.Comodidad;
 import java.time.LocalDate;
@@ -16,3 +16,4 @@ public class ComodidadBasica extends Comodidad {
     }
 
 }
+
