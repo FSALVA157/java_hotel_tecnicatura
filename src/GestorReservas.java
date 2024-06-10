@@ -47,4 +47,10 @@ public class GestorReservas {
         return reserva.calcularCosto();
     };
 
+    public void listarReservas(){
+        for (IReserva reserva : reservas) {
+            System.out.println(reserva.toString());
+        }
+    }
+
 }

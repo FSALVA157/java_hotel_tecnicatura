@@ -31,7 +31,7 @@ public class HabitacionDoble extends HabitacionGeneral<ComodidadBasica>{
 
     @Override
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
-        int verifica_reservas = App.getGestor().contarReservas(this, fechaInicio, fechaFin);
+        int verifica_reservas = App.getGestorDisp().contarReservas(this, fechaInicio, fechaFin);
         int noches = (int) (fechaFin.toEpochDay() - fechaInicio.toEpochDay());
         return verifica_reservas == 0 && noches >= 2;
     }
@@ -55,6 +55,8 @@ public class HabitacionDoble extends HabitacionGeneral<ComodidadBasica>{
     public boolean equals(IHabitacion<ComodidadBasica> otra_Habitacion) {
         return this.getTipo().equals(otra_Habitacion.getTipo()) && this.getPrecio() == otra_Habitacion.getPrecio();
     }
+
+    
 
 }
 

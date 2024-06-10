@@ -70,5 +70,17 @@ public class Reserva implements IReserva {
                 this.fechaFin.equals(otra_Reserva.getFechaFin());
     }
 
+    @Override
+    public String toString(){
+         StringBuilder detalles = new StringBuilder();
+        detalles.append("Tipo de habitación: ").append(getHabitacion().getTipo()).append("\n");
+        detalles.append("Cliente: ").append(getCliente().getNombre()).append("\n");
+        detalles.append("Comodidades:\n");
+        detalles.append(" Fechas: ").append(fechaInicio.toString()).append(" - ").append(fechaFin.toString()).append("\n");
+        detalles.append(" Precio total: $").append(calcularCosto()).append("\n");
+        
+        return detalles.toString();
+    }
+
 
 }

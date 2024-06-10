@@ -31,7 +31,7 @@ public class HabitacionSuite extends HabitacionGeneral<ComodidadPremium>{
 
     @Override
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
-        int verifica_reservas = App.getGestor().contarReservas(this, fechaInicio, fechaFin);
+        int verifica_reservas = App.getGestorDisp().contarReservas(this, fechaInicio, fechaFin);
         int noches = (int) (fechaFin.toEpochDay() - fechaInicio.toEpochDay());
         return (verifica_reservas < 5) && (noches >= 3);
     }
