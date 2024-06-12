@@ -25,4 +25,13 @@ public abstract class HabitacionGeneral<T extends Comodidad> implements IHabitac
         }
         return detalles.toString();
     }
+
+    // public void listarComodidades() {
+    //     for (Comodidad comodidad : comodidades) {
+    //         StringBuilder detalles = new StringBuilder();
+    //         detalles.append("  - ").append(comodidad.getNombre()).append(" a $").append((double)comodidad.getPrecio()).append("\n");
+    //         System.out.println(detalles.toString());            
+    //     }
+        
+    // }
 }

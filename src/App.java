@@ -70,6 +70,7 @@ public static void main(String[] args){
          LocalDate fechaFin = LocalDate.of(2025, 1, 31);         
          gestorReservas.realizarReserva(cliente_1, habitaciones.get(0), fechaInicio, fechaFin);
          
+         
 
          fechaInicio = LocalDate.of(2025, 2, 1);
          fechaFin = LocalDate.of(2025, 2, 28);         

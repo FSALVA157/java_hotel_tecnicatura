@@ -52,17 +52,17 @@ public class HabitacionSimple extends HabitacionGeneral<ComodidadBasica>{
         return this.getTipo().equals(otra_Habitacion.getTipo()) && this.getPrecio() == otra_Habitacion.getPrecio();
     }
 
-    // @Override
-    // public String toString() {
-    //     StringBuilder detalles = new StringBuilder();
-    //     detalles.append("Tipo de habitación: ").append(getTipo()).append("\n");
-    //     detalles.append("Precio por noche: ").append(getPrecio()).append("\n");
-    //     detalles.append("Comodidades:\n");
-    //     for (ComodidadBasica comodidad : getComodidades()) {
-    //         detalles.append("  - ").append(comodidad.getNombre()).append(" a $").append(comodidad.getPrecio()).append("\n");
-    //     }
-    //     return detalles.toString();
-    // }
+    @Override
+    public String toString() {
+        StringBuilder detalles = new StringBuilder();
+        // detalles.append("Tipo de habitación: ").append(getTipo()).append("\n");
+        // detalles.append("Precio por noche: ").append(getPrecio()).append("\n");
+        detalles.append("Comodidades:\n");
+        for (ComodidadBasica comodidad : getComodidades()) {
+            detalles.append("  - ").append(comodidad.getNombre()).append(" a $").append(comodidad.getPrecio()).append("\n");
+        }
+        return detalles.toString();
+    }
 
 }
 

@@ -1,5 +1,6 @@
 
 
+import abstractas.Comodidad;
 import interfaces.ICliente;
 import interfaces.IHabitacion;
 import interfaces.IReserva;
@@ -76,8 +77,13 @@ public class Reserva implements IReserva {
         detalles.append("Tipo de habitación: ").append(getHabitacion().getTipo()).append("\n");
         detalles.append("Cliente: ").append(getCliente().getNombre()).append("\n");
         detalles.append("Comodidades:\n");
+        for (Object dataComodidad : this.habitacion.getComodidades()) {
+            Comodidad comodidad = (Comodidad) dataComodidad;
+            detalles.append("  - ").append(comodidad.getNombre()).append(" a $").append(comodidad.getPrecio()).append("\n");
+        }
         detalles.append(" Fechas: ").append(fechaInicio.toString()).append(" - ").append(fechaFin.toString()).append("\n");
-        detalles.append(" Precio total: $").append(calcularCosto()).append("\n");
+        detalles.append(" Precio total: $").append(calcularCosto()).append("\n");        
+        detalles.append("Puntos del Cliente: ").append(cliente.getPuntos()).append("\n");
         
         return detalles.toString();
     }
