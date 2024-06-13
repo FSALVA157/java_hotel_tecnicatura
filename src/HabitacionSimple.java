@@ -32,7 +32,13 @@ public class HabitacionSimple extends HabitacionGeneral<ComodidadBasica>{
     @Override
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
         int cantidad_reservas = App.getGestorDisp().contarReservas(this, fechaInicio, fechaFin);
-        return cantidad_reservas < 4;
+        boolean value = cantidad_reservas < 4;
+        if(value){
+            System.out.println("Habitacion Simple disponible");
+        }else{
+            System.out.println("Habitacion Simple no disponible porque existen 4 reservas similares o mas: " + cantidad_reservas);
+        }
+        return value;
     }
 
     @Override

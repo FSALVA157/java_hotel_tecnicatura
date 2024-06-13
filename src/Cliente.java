@@ -24,7 +24,7 @@ public class Cliente implements  ICliente{
 
     @Override
     public void acumularPuntos(IReserva reserva) {
-        this.puntos = puntos + (int) reserva.calcularCosto() / 100;
+        this.puntos += (int) reserva.calcularCosto() / 100;
     }
 
 }

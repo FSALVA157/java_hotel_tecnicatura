@@ -33,7 +33,13 @@ public class HabitacionDoble extends HabitacionGeneral<ComodidadBasica>{
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
         int verifica_reservas = App.getGestorDisp().contarReservas(this, fechaInicio, fechaFin);
         int noches = (int) (fechaFin.toEpochDay() - fechaInicio.toEpochDay());
-        return verifica_reservas == 0 && noches >= 2;
+        boolean value = verifica_reservas == 0 && noches >= 2;
+        if(value){
+            System.out.println("Habitacion Doble disponible");
+            }else{
+            System.out.println("Habitacion Doble no disponible el gestor de disponibilidad arroja esta cantidad de reservas: " + verifica_reservas + "o porque la cantidad de noches es menor a 2: " + noches);
+        }
+        return value;
     }
 
     @Override

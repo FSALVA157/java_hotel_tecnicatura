@@ -28,4 +28,10 @@ public class GestorDisponibilidad {
         return cantReservas;
     }
 
+    public void listarReservas(){
+        for (IReserva reserva : reservas) {
+            System.out.println(reserva.toString());
+        }
+    }
+
 }

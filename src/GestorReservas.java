@@ -15,10 +15,10 @@ public class GestorReservas {
     }
 
     public void realizarReserva(ICliente cliente, IHabitacion habitacion, LocalDate fechaInicio, LocalDate fechaFin){
-        try {
+        try {            
             IReserva nueva_reserva = new Reserva(cliente, habitacion, fechaInicio, fechaFin);     
             this.reservas.add(nueva_reserva);
-            cliente.acumularPuntos(nueva_reserva);
+            cliente.acumularPuntos(nueva_reserva);            
         } catch (Exception e) {
             throw new Error("No se pudo realizar la reserva");
         }

@@ -33,7 +33,14 @@ public class HabitacionSuite extends HabitacionGeneral<ComodidadPremium>{
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
         int verifica_reservas = App.getGestorDisp().contarReservas(this, fechaInicio, fechaFin);
         int noches = (int) (fechaFin.toEpochDay() - fechaInicio.toEpochDay());
-        return (verifica_reservas < 5) && (noches >= 3);
+        boolean value = (verifica_reservas < 5) && (noches >= 3);
+        if(value){
+            System.out.println("Habitacion Simple disponible");
+        }else{
+            
+            System.out.println("Habitacion Suite no disponible porque existen 5 reservas similares o mas: " + verifica_reservas + "o porque la cantidad de noches es menor a 3: " + noches);
+        }
+        return value;
     }
 
     @Override

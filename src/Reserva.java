@@ -82,8 +82,7 @@ public class Reserva implements IReserva {
             detalles.append("  - ").append(comodidad.getNombre()).append(" a $").append(comodidad.getPrecio()).append("\n");
         }
         detalles.append(" Fechas: ").append(fechaInicio.toString()).append(" - ").append(fechaFin.toString()).append("\n");
-        detalles.append(" Precio total: $").append(calcularCosto()).append("\n");        
-        detalles.append("Puntos del Cliente: ").append(cliente.getPuntos()).append("\n");
+        detalles.append(" Precio total: $").append(calcularCosto()).append("\n");               
         
         return detalles.toString();
     }
